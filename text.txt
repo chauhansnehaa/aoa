@@ -1,0 +1,51 @@
+theory :-
+The naive string matching algorithm, also known as the brute-force or straightforward method, 
+is a simple algorithm used to find all occurrences of a pattern string within a longer text string.
+ It works by systematically checking every possible substring of the text against the pattern to see if they match.
+
+Here's how the naive string matching algorithm works:
+
+1. **Initialization**: Start by aligning the pattern string at the beginning of the text string.
+
+2. **Comparison**: Compare each character of the pattern string with the corresponding character of the text string,
+ starting from the beginning.
+
+3. **Matching Check**: If all characters in the pattern string match the corresponding characters in the text string, 
+then a match is found.
+
+4. **Move to Next Position**: If a match is not found, move the pattern one position to the right and repeat the comparison
+ process.
+
+5. **Repeat**: Continue moving the pattern one position to the right and comparing until either a match is found or 
+the end of the text string is reached.
+
+6. **Output**: Whenever a match is found, record or output the position in the text string where the match occurred.
+
+The naive string matching algorithm has a time complexity of O((n-m+1)*m), where n is the length of the text string and m 
+is the length of the pattern string. In the worst case, it may need to examine all characters of the text string multiple times,
+ making it inefficient for large texts or patterns.
+
+Although the naive algorithm is simple and easy to implement, it's not the most efficient solution for large datasets. 
+ However, the naive algorithm serves as a good starting point for understanding string matching algorithms.
+
+
+
+
+ lcs theory :-
+
+ LCS stands for "Longest Common Subsequence." It's a dynamic programming algorithm used to find the longest subsequence 
+ that is present in given sequences (strings), which could be different lengths.
+
+A subsequence is a sequence that appears in the same relative order but not necessarily contiguous. In other words, 
+a subsequence of a string is obtained by deleting some of the 
+characters (possibly none) without changing the order of the remaining characters.
+
+Here's a basic outline of the LCS algorithm:
+
+1.Initialize a matrix with dimensions (m+1) x (n+1), where m and n are the lengths of the input sequences.
+2.Iterate through the sequences character by character.
+    *If the characters match, add 1 to the value in the cell diagonal to the current cell.
+    *If the characters don't match, take the maximum value from the cell above or the cell to the left 
+    and place it in the current cell.
+3.After filling the matrix, trace back through it to reconstruct the longest common subsequence.
+The time complexity of the LCS algorithm is O(m * n), where m and n are the lengths of the input sequences.
